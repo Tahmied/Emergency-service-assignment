@@ -445,6 +445,7 @@
      font-size: 16px;
      text-align: center;
      color: #FFFFFF;
+     cursor: pointer;
 }
  .call-history-list {
      list-style-type: none;

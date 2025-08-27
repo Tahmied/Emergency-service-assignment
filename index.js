@@ -122,3 +122,15 @@ copyButton.forEach((btn)=>{
     await navigator.clipboard.writeText(number);
   })
 })
+
+
+// clear button functionality
+
+const clearBtn = document.querySelector('.clear-btn')
+
+clearBtn.addEventListener('click' , (e)=>{
+  let historyitem = document.querySelectorAll('.call-history-item')
+  historyitem.forEach((callItem)=>{
+    callItem.remove()
+  })
+})
