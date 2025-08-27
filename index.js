@@ -62,7 +62,7 @@ function getCurrentTime(){
     second : '2-digit',
     hour12 : true
   })
-  return time.toLocaleLowerCase()
+  return time
 }
 
 const callButtons = document.querySelectorAll('.btn-call')
@@ -73,8 +73,9 @@ callButtons.forEach((callBtns)=>{
   callBtns.addEventListener('click' , (e)=>{
     e.preventDefault()
     if(coinCount>=20){
-      let phoneNumber = e.target.parentElement.parentElement.childNodes[5].innerText
-      let serviceName = e.target.parentElement.parentElement.childNodes[3].childNodes[1].innerText
+      let card = e.target.closest('.helpline-card');
+      let phoneNumber = card.querySelector('.helpline-number').innerText
+      let serviceName = card.querySelector('.card-body h3').innerText;
       alert(`Calling ${serviceName} on ${phoneNumber}...`)
 
       let historyLi = document.createElement('li')
@@ -116,10 +117,15 @@ callButtons.forEach((callBtns)=>{
 
 // copy button functionality
 const copyButton = document.querySelectorAll('.btn-copy')
+let copyCount = 0;
 copyButton.forEach((btn)=>{
   btn.addEventListener('click', async (e)=>{
-    let number = e.target.parentElement.parentElement.childNodes[5].innerText
+    let card = e.target.closest('.helpline-card');
+    let number = card.querySelector('.helpline-number').innerText;
     await navigator.clipboard.writeText(number);
+    copyCount++
+    document.querySelector('.copy-count-num').innerText = copyCount
+    alert(`Number copied ${number}`)
   })
 })
 
