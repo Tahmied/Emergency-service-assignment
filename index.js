@@ -40,13 +40,15 @@ document.addEventListener('click', (e) => {
 // heart icon functionality
 
 const heartIcon = document.querySelectorAll('.heart-icon')
-const heartCountShow = document.querySelector('.heart-count-text')
+const heartCountShow = document.querySelectorAll('.heart-count-text')
 let heartCount = 0;
 
 heartIcon.forEach((icon)=>{
   icon.addEventListener('click',(e)=>{
     heartCount++
-    heartCountShow.innerText = heartCount
+    heartCountShow.forEach((text)=>{
+      text.innerText = heartCount
+    })
   })
 })
 
@@ -64,40 +66,53 @@ function getCurrentTime(){
 }
 
 const callButtons = document.querySelectorAll('.btn-call')
+const coinCountText = document.querySelectorAll('.coin-count-text')
+let coinCount = 100;
 
 callButtons.forEach((callBtns)=>{
   callBtns.addEventListener('click' , (e)=>{
     e.preventDefault()
 
-    let phoneNumber = e.target.parentElement.parentElement.childNodes[5].innerText
-    let serviceName = e.target.parentElement.parentElement.childNodes[3].childNodes[1].innerText
-    alert(`Calling ${serviceName} on ${phoneNumber}...`)
+    coinCount = coinCount - 20
 
-    let historyLi = document.createElement('li')
-    historyLi.classList.add('call-history-item')
+    coinCountText.forEach((text)=>{
+      text.innerText = coinCount
+    })
 
-    let historyDivLeft = document.createElement('div')
-    historyDivLeft.classList.add('history-item-left')
-    let serviceTitle = document.createElement('p')
-    let serviceNum = document.createElement('p')
-    serviceTitle.classList.add('history-item-title')
-    serviceNum.classList.add('history-item-number')
-    serviceTitle.innerText = serviceName
-    serviceNum.innerText = phoneNumber
-    historyDivLeft.appendChild(serviceTitle)
-    historyDivLeft.appendChild(serviceNum)
-    historyLi.appendChild(historyDivLeft)
+    if(coinCount>=20){
+      let phoneNumber = e.target.parentElement.parentElement.childNodes[5].innerText
+      let serviceName = e.target.parentElement.parentElement.childNodes[3].childNodes[1].innerText
+      alert(`Calling ${serviceName} on ${phoneNumber}...`)
 
-    let historyDivRight = document.createElement('div')
-    historyDivRight.classList.add('history-item-right')
-    let timeText = document.createElement('p')
-    timeText.classList.add('call-history-time')
-    timeText.innerHTML = getCurrentTime()
-    historyDivRight.appendChild(timeText)
-    historyLi.appendChild(historyDivRight)
+      let historyLi = document.createElement('li')
+      historyLi.classList.add('call-history-item')
 
-    const historyList = document.getElementsByClassName('call-history-list')
-    historyList[0].appendChild(historyLi)
+      let historyDivLeft = document.createElement('div')
+      historyDivLeft.classList.add('history-item-left')
+      let serviceTitle = document.createElement('p')
+      let serviceNum = document.createElement('p')
+      serviceTitle.classList.add('history-item-title')
+      serviceNum.classList.add('history-item-number')
+      serviceTitle.innerText = serviceName
+      serviceNum.innerText = phoneNumber
+      historyDivLeft.appendChild(serviceTitle)
+      historyDivLeft.appendChild(serviceNum)
+      historyLi.appendChild(historyDivLeft)
 
+      let historyDivRight = document.createElement('div')
+      historyDivRight.classList.add('history-item-right')
+      let timeText = document.createElement('p')
+      timeText.classList.add('call-history-time')
+      timeText.innerHTML = getCurrentTime()
+      historyDivRight.appendChild(timeText)
+      historyLi.appendChild(historyDivRight)
+
+      const historyList = document.getElementsByClassName('call-history-list')
+      historyList[0].appendChild(historyLi)
+    } else {
+      alert ('You don\'t have sufficient coin, minimum 20 coin is required to make a call')
+    }
+
+    
   })
 })
