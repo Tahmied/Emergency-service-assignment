@@ -13,6 +13,11 @@ body {
     font-family: "Hind Madurai", sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+
 /* header */
 
 .pc-header {
@@ -141,6 +146,12 @@ body {
     opacity: 0;
     transform: translateX(150px);
     transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 4rem;
+    right: 0;
+    height: fit-content;
+    width: 40%;
+    transform: translateX(100%);
 }
 
 .mobile-menu.open {
@@ -197,5 +208,57 @@ body {
     }
     .menu-icon-mobile {
         padding-right: 1rem;
+    }
+}
+
+/* hero section */
+
+.hero {
+    background: linear-gradient(90deg, #013223 0%, #006747 49.99%, #013223 100%);
+}
+
+.hero-container {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 60px;
+    gap: 11px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    height: 50px;
+    width: 50px;
+}
+
+.hero-title {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Hind Madurai';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.hero-desc {
+    font-family: 'Hind Madurai';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media(max-width:650px) {
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-desc {
+        font-size: 16px;
     }
 }
