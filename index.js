@@ -35,3 +35,17 @@ document.addEventListener('click', (e) => {
         }, {once: true});
     }
 });
+
+
+// heart icon functionality
+
+const heartIcon = document.querySelectorAll('.heart-icon')
+const heartCountShow = document.querySelector('.heart-count-text')
+let heartCount = 0;
+
+heartIcon.forEach((icon)=>{
+  icon.addEventListener('click',(e)=>{
+    heartCount++
+    heartCountShow.innerText = heartCount
+  })
+})
