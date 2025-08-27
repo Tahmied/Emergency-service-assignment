@@ -124,7 +124,9 @@ copyButton.forEach((btn)=>{
     let number = card.querySelector('.helpline-number').innerText;
     await navigator.clipboard.writeText(number);
     copyCount++
-    document.querySelector('.copy-count-num').innerText = copyCount
+    document.querySelectorAll('.copy-count-num').forEach((text)=>{
+      text.innerText = copyCount
+    })
     alert(`Number copied ${number}`)
   })
 })
