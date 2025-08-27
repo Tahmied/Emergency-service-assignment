@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     margin: 0;
@@ -10,7 +9,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Hind Madurai", sans-serif;
+    font-family: "Hind Madurai", "Roboto", "Inter" sans-serif;
 }
 
 html, body {
@@ -262,3 +261,295 @@ html, body {
         font-size: 16px;
     }
 }
+
+
+
+/* main section */
+ :root {
+     --primary-green: #10B981;
+     --primary-green-light: #D1FAE5;
+     --primary-green-dark: #047857;
+     --secondary-red-light: #FEE2E2;
+     --secondary-blue-light: #DBEAFE;
+     --grey-text: #6B7280;
+     --grey-light: #F3F4F6;
+     --grey-border: #E5E7EB;
+     --background-color: #F9FAFB;
+     --text-dark: #1F2937;
+     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+     --border-radius: 0.75rem;
+}
+
+.main-directory {
+    background-color: #f5fff6;
+}
+ .directory-container {
+     display: flex;
+     gap: 2rem;
+     width: 100%;
+     max-width: 1400px;
+     margin: 1rem auto;
+     font-family: 'Roboto';
+    padding: 0 1rem 0 1rem;
+}
+ .helpline-grid {
+     flex-grow: 1;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 1.5rem;
+}
+ .helpline-card {
+     background-color: white;
+     border-radius: 12px;
+     padding: 32px;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ .helpline-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+ .card-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.emergency-icon-container {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffe3e2;
+    border-radius: 16px;
+}
+
+.police-icon-container {
+    background-color: #dfefff;
+}
+
+.card-left-icon {
+    height: 32px;
+    width: 32px;
+}
+
+ .icon-container {
+     width: 48px;
+     height: 48px;
+     border-radius: 0.5rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ .icon-container .bg-red {
+     background-color: var(--secondary-red-light);
+}
+ .icon-container .bg-blue {
+     background-color: var(--secondary-blue-light);
+}
+ .icon-container .bg-green {
+     background-color: var(--primary-green-light);
+}
+ .icon-container svg {
+     width: 24px;
+     height: 24px;
+}
+
+.heart-icon {
+    cursor: pointer;
+}
+
+ .card-body h3 {
+    font-family: 'Hind Madurai';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #111111;
+}
+ .card-body p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #5C5C5C;
+}
+ .helpline-number {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #111111;
+}
+ .category-tag {
+    background-color: #f2f2f2;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    align-self: flex-start;
+    font-family: 'Hind Madurai';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #5C5C5C;
+}
+ .card-actions {
+     display: flex;
+     gap: 0.75rem;
+     margin-top: auto;
+     padding-top: 1rem;
+}
+ .card-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 6px;
+    width: 182.33px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D4D6D5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.card-btn:hover {
+    transform: translateY(-3px);
+}
+
+ .btn-copy {
+     background-color: white;
+     border-color: var(--grey-border);
+     color: var(--text-dark);
+}
+
+.btn-call {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 6px;
+    width: 182.33px;
+    height: 40px;
+    background: #00A63E;
+    border-radius: 8px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* call history section */
+.call-history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.call-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.history-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.clock-icon {
+    height: 24px;
+    width: 24px;
+}
+
+.call-history {
+    width: 104px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #111111;
+}
+
+.clear-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 36px;
+    gap: 10px;
+    background: #00A63E;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.call-history-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.call-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 16px;
+    gap: 16px;
+    width: 352px;
+    height: 83px;
+    background: #FAFAFA;
+    border-radius: 8px;
+}
+
+
+
+ @media (max-width: 1200px) {
+     .directory-container {
+         flex-direction: column;
+    }
+     .call-history-container {
+         width: 100%;
+    }
+}
+ @media (max-width: 768px) {
+     .directory-container, .helpline-grid {
+         gap: 1rem;
+    }
+     .helpline-card, .call-history-container {
+         padding: 1rem;
+    }
+     .helpline-number {
+         font-size: 1.75rem;
+    }
+}
+ 
