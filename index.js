@@ -72,13 +72,6 @@ let coinCount = 100;
 callButtons.forEach((callBtns)=>{
   callBtns.addEventListener('click' , (e)=>{
     e.preventDefault()
-
-    coinCount = coinCount - 20
-
-    coinCountText.forEach((text)=>{
-      text.innerText = coinCount
-    })
-
     if(coinCount>=20){
       let phoneNumber = e.target.parentElement.parentElement.childNodes[5].innerText
       let serviceName = e.target.parentElement.parentElement.childNodes[3].childNodes[1].innerText
@@ -109,10 +102,13 @@ callButtons.forEach((callBtns)=>{
 
       const historyList = document.getElementsByClassName('call-history-list')
       historyList[0].appendChild(historyLi)
+
+      coinCount = coinCount - 20
+      coinCountText.forEach((text)=>{
+        text.innerText = coinCount
+      })
     } else {
       alert ('You don\'t have sufficient coin, minimum 20 coin is required to make a call')
     }
-
-    
   })
 })
