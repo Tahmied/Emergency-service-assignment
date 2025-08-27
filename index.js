@@ -112,3 +112,13 @@ callButtons.forEach((callBtns)=>{
     }
   })
 })
+
+
+// copy button functionality
+const copyButton = document.querySelectorAll('.btn-copy')
+copyButton.forEach((btn)=>{
+  btn.addEventListener('click', async (e)=>{
+    let number = e.target.parentElement.parentElement.childNodes[5].innerText
+    await navigator.clipboard.writeText(number);
+  })
+})
